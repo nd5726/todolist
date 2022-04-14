@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&display=swap');
+
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+
+@layer base {
+    html{
+        scroll-behavior: smooth;
+    }
+    #app{
+        font-family: 'Noto Sans TC', serif;
+    }
+    button:focus,input:focus{
+        outline:2px solid #FF9900;
+    }
+    input[type=checkbox]:not(old){
+        width   : 0;
+        height :0;
+        margin  : 0;
+        padding : 0;
+        opacity : 0;
+    }
+    input[type=checkbox]:not(old) + label{
+        display      : inline-block;
+        padding-left : 40px;
+        background   : url('../assets/check_0.png') no-repeat;
+        background-size: 20px 20px;
+        background-position: center left;
+    }
+    
+    input[type=checkbox]:not(old):checked + label{
+        background : url('../assets/check_1.png') no-repeat ;
+        background-size: 18px auto;
+        background-position: center left;
+        text-decoration:line-through;
+        color:#9F9A91;
+    }
+}
+
+@layer utilities{
+    
+    .shadow-custom{
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+    }
+    .btn-plus{
+        background-color: #333333;
+        background-image:url('../assets/plus.png');
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    .btn-del{
+        background-image:url('../assets/del.png');
+        background-repeat: no-repeat;
+        background-position: center center;
+        width:15px;
+        height:15px;
+    }
+}
+
+@layer components {
+    /* .btn-primary {
+      @apply py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+    } */
+  }
